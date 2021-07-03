@@ -112,7 +112,11 @@ public class Deposit extends JFrame implements ActionListener {
             if (ae.getSource() == b1) {
                 if (t1.getText().equals("")) {
                     JOptionPane.showMessageDialog(null, "Please  want to Deposit");
-                } else {
+                }
+                else if(t2.getText().equals("")){
+                    JOptionPane.showMessageDialog(null, "Enter your PIN to deposit");
+                }
+                else {
                     conn c1 = new conn();
 
                     ResultSet rs = c1.s.executeQuery(" select * from bank where pin = "+b+" ");
