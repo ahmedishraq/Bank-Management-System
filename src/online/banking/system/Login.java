@@ -99,7 +99,6 @@ public class Login extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.WHITE);
 
         setSize(700, 700);
-        //setLocation(200,50);
         // auto set the location of the frame in center 
         setLocationRelativeTo(null);
         setVisible(true);

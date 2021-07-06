@@ -25,7 +25,6 @@ public class MiniStatement extends JFrame implements ActionListener {
     MiniStatement() {
         super("Mini Statement");
         setSize(1200, 650);
-        //setLocation(200, 200);
         // auto set the location of the frame in center.
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

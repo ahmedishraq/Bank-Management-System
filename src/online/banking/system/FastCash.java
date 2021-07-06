@@ -127,7 +127,6 @@ public class FastCash extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.WHITE);
 
         setSize(800, 800);
-        // setLocation(500, 90);
         // auto set the location of the frame in center.
         setLocationRelativeTo(null);
         setVisible(true);
