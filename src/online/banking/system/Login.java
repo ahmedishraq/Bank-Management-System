@@ -120,7 +120,7 @@ public class Login extends JFrame implements ActionListener {
                 // Debug 
                 String a = tf1.getText();
                 String b = pf2.getText();
-                String q = "select * from login where cardno =  " + a + "  and pin =  " + b + "  ";
+                String q = "select * from login where card_number =  " + a + "  and pin =  " + b + "  ";
                 ResultSet rs = c1.s.executeQuery(q);
 
                 if (rs.next()) {

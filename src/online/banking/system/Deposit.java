@@ -123,15 +123,24 @@ public class Deposit extends JFrame implements ActionListener {
                     double balance = 0;
                     if (rs.next()) {
                         String pin = rs.getString("pin");
-                        while (rs.next()) {
+                        //while (rs.next()) {
                             balance = rs.getDouble("balance");
-                        }
+                            String last_debit = rs.getString("debit");
+                        //}
 
                         double d = Double.parseDouble(a);
                         balance += d;
-                        String q1 = "insert into bank values('" + pin + "','" + d + "',null,'" + balance + "')";
-
-                        c1.s.executeUpdate(q1);
+//                        String q1 = "insert into bank values('" + pin + "','" + d + "',null,'" + balance + "')";
+//
+//                        c1.s.executeUpdate(q1);
+//                        
+                        // testing new query 
+                        String q2 ="update bank set credit = '"+a+"' where pin = '"+pin+"' ";
+                        String q3 = "update bank set debit = '"+last_debit+"' where pin = '"+pin+"' ";
+                        String q4 = "update bank set balance = '"+balance+"' where pin = '"+pin+"' ";
+                        c1.s.executeUpdate(q2);
+                        c1.s.executeUpdate(q3);
+                        c1.s.executeUpdate(q4);
                     }
                     JOptionPane.showMessageDialog(null, "Tk. " + a + " Deposited Successfully");
 

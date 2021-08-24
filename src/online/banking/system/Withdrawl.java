@@ -133,12 +133,22 @@ public class Withdrawl extends JFrame implements ActionListener {
                         String pin = rs.getString("pin");
 
                         balance = rs.getDouble("balance");
+                        
+                        String last_credit = rs.getString("credit");
 
                         double d = Double.parseDouble(a);
                         balance -= d;
-                        String q1 = "insert into bank values('" + pin + "',null,'" + d + "','" + balance + "')";
-
-                        c1.s.executeUpdate(q1);
+//                        String q1 = "insert into bank values('" + pin + "',null,'" + d + "','" + balance + "')";
+//
+//                        c1.s.executeUpdate(q1);
+//                        
+                        // new query for debug 
+                        String q2 ="update bank set credit = '"+last_credit+"' where pin = '"+pin+"' ";
+                        String q3 = "update bank set debit = '"+a+"' where pin = '"+pin+"' ";
+                        String q4 = "update bank set balance = '"+balance+"' where pin = '"+pin+"' ";
+                        c1.s.executeUpdate(q2);
+                        c1.s.executeUpdate(q3);
+                        c1.s.executeUpdate(q4);
                     }
 
                     JOptionPane.showMessageDialog(null, "Tk. " + a + " Debited Successfully");
